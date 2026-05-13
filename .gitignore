@@ -1,0 +1,4 @@
+node_modules
+dist
+vodafone-billing-downloader
+.pnpm-store

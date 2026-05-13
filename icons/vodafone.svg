@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vodafone invoices">
+	<rect width="64" height="64" rx="12" fill="#e60000"/>
+	<path fill="#fff" d="M18 14h28v36H18z"/>
+	<path fill="#e60000" d="M23 22h18v3H23zm0 8h18v3H23zm0 8h12v3H23z"/>
+	<path fill="#fff" d="M46 14h-9v9h9z"/>
+	<path fill="#f7b500" d="M38 15l7 7h-7z"/>
+</svg>
