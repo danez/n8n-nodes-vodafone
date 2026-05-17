@@ -35,7 +35,7 @@ const OIDC_TOKEN_URL = 'https://www.vodafone.de/mint/oidc/token';
 const OIDC_CLIENT_ID = 'b0595a44-0726-11ec-9011-9457a55a403c';
 const OIDC_REDIRECT_URI = 'https://www.vodafone.de/meinvodafone/services/';
 const OIDC_SCOPES =
-  'openid profile webseal user-groups user-accounts validate-token update-email-username account';
+  'openid profile webseal user-groups user-accounts validate-token update-email-username account user-data user-subscriptions';
 const OIDC_CODE_CHALLENGE_LENGTH = 43;
 const VODAFONE_API_KEY = 'aEIoMCae0A933wBL0bLlS6SwSBfkKwM5';
 const USER_INFO_URL =
