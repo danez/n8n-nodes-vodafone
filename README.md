@@ -34,7 +34,7 @@ Each output item includes invoice and contract metadata in `json` and the PDF in
 
 ## Compatibility
 
-Compatible with n8n community-node projects using `@n8n/node-cli`.
+Requires n8n `1.116.0` or newer.
 
 ## Resources
 

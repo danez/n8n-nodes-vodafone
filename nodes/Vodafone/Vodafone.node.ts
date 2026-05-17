@@ -20,13 +20,13 @@ import {
 	login,
 	sanitizeFileName,
 	testVodafoneCredentials,
-} from './GenericFunctions';
+} from './GenericFunctions.js';
 import type {
 	VodafoneCableAccount,
 	VodafoneCredentials,
 	VodafoneInvoice,
 	VodafoneInvoiceDocument,
-} from './interfaces';
+} from './interfaces.js';
 
 export class Vodafone implements INodeType {
 	description: INodeTypeDescription = {

@@ -7,7 +7,10 @@
 	"keywords": [
 		"n8n-community-node-package"
 	],
-	"packageManager": "pnpm@11.1.1",
+	"engines": {
+		"node": ">=22.18.0"
+	},
+	"packageManager": "pnpm@11.1.2",
 	"author": {
 		"name": "Daniel Tschinder",
 		"email": "code@tschinder.de"
@@ -22,8 +25,8 @@
 		"dev": "n8n-node dev",
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
-		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
+		"changesets-release": "pnpm build && changeset publish",
+		"changesets-version": "changeset version && pnpm install --lockfile-only"
 	},
 	"files": [
 		"dist"
@@ -39,9 +42,12 @@
 		]
 	},
 	"devDependencies": {
+		"@changesets/changelog-github": "0.6.0",
+		"@changesets/cli": "2.31.0",
 		"@n8n/node-cli": "0.30.1",
 		"eslint": "9.39.4",
 		"prettier": "3.8.3",
+		"rimraf": "6.1.3",
 		"typescript": "6.0.3"
 	},
 	"peerDependencies": {

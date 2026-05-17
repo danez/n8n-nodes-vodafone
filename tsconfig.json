@@ -1,10 +1,10 @@
 {
 	"compilerOptions": {
 		"strict": true,
-		"module": "node16",
+		"module": "nodenext",
 		"moduleResolution": "node16",
-		"target": "es2019",
-		"lib": ["es2019", "es2020", "es2022.error"],
+		"target": "es2022",
+		"lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
 		"removeComments": true,
 		"useUnknownInCatchVariables": false,
 		"forceConsistentCasingInFileNames": true,
@@ -22,5 +22,5 @@
 		"rootDir": "./",
 		"outDir": "./dist/"
 	},
-	"include": ["credentials/**/*", "nodes/**/*", "nodes/**/*.json", "package.json"]
+	"include": ["credentials/**/*", "nodes/**/*", "nodes/**/*.json"]
 }

@@ -22,7 +22,7 @@ import type {
 	VodafoneSession,
 	VodafoneUserAsset,
 	VodafoneUserInfo,
-} from './interfaces';
+} from './interfaces.js';
 
 const ACCEPT = 'application/json, text/plain, */*';
 const ACCEPT_LANGUAGE = 'en-US,en;q=0.5';
