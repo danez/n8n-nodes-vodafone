@@ -25,7 +25,7 @@ import type {
 } from './interfaces.js';
 
 const ACCEPT = 'application/json, text/plain, */*';
-const ACCEPT_LANGUAGE = 'de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7';
+const ACCEPT_LANGUAGE = 'en-US,en;q=0.5';
 const USER_AGENT =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0';
 const LOGIN_URL = 'https://www.vodafone.de/mint/rest/v60/session/start';
@@ -41,27 +41,11 @@ const VODAFONE_API_KEY = 'aEIoMCae0A933wBL0bLlS6SwSBfkKwM5';
 const USER_INFO_URL =
   'https://api.vodafone.de/meinvodafone/v2/tmf-api/openid/v4/userinfo';
 
-interface VodafoneTokenExchange {
-  cookies: Map<string, string>;
-  token: OidcTokenResponse;
-}
-
 function defaultHeaders(): IDataObject {
   return {
     Accept: ACCEPT,
     'Accept-Language': ACCEPT_LANGUAGE,
     'User-Agent': USER_AGENT,
-  };
-}
-
-function browserHeaders(): IDataObject {
-  return {
-    ...defaultHeaders(),
-    Origin: 'https://www.vodafone.de',
-    Referer: OIDC_REDIRECT_URI,
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-site',
   };
 }
 
@@ -173,34 +157,6 @@ function locationHeader(response: IN8nHttpFullResponse): string {
   return '';
 }
 
-function responseDetails(response: IN8nHttpFullResponse): string {
-  const details: string[] = [];
-  const contentType = headerValue(response.headers, 'content-type');
-
-  if (typeof contentType === 'string') {
-    details.push(`content-type: ${contentType}`);
-  }
-
-  if (typeof response.body === 'string' && response.body.trim()) {
-    details.push(`body: ${redactResponseBody(response.body.trim())}`);
-  } else if (
-    response.body &&
-    typeof response.body === 'object' &&
-    !Buffer.isBuffer(response.body)
-  ) {
-    details.push(`body: ${redactResponseBody(JSON.stringify(response.body))}`);
-  }
-
-  return details.length ? `; ${details.join('; ')}` : '';
-}
-
-function redactResponseBody(body: string): string {
-  return body
-    .replace(/Bearer\s+[A-Za-z0-9._~+/-]+=*/gi, 'Bearer [redacted]')
-    .replace(/access_token["']?\s*[:=]\s*["']?[^"',\s}]+/gi, 'access_token=[redacted]')
-    .slice(0, 500);
-}
-
 function createApiError(
   executeFunctions: IExecuteFunctions,
   message: string,
@@ -210,12 +166,7 @@ function createApiError(
   const statusText = response?.statusCode
     ? `${message} (HTTP ${response.statusCode}${response.statusMessage ? ` ${response.statusMessage}` : ''})`
     : message;
-  const errorMessage = response
-    ? `${statusText}${responseDetails(response)}`
-    : statusText;
-  const errorResponse: JsonObject = {
-    message: errorMessage,
-  };
+  const errorResponse: JsonObject = { message: statusText };
 
   if (response?.statusCode !== undefined) {
     errorResponse.statusCode = response.statusCode;
@@ -240,7 +191,7 @@ function createApiError(
   return new NodeApiError(executeFunctions.getNode(), errorResponse, {
     itemIndex,
     httpCode: response?.statusCode ? String(response.statusCode) : undefined,
-    message: errorMessage,
+    message: statusText,
   });
 }
 
@@ -266,10 +217,11 @@ async function requestJson<T>(
     url,
     method: 'GET',
     headers: {
-      ...browserHeaders(),
+      ...defaultHeaders(),
       'Content-Type': 'application/json',
       Authorization: `${session.token.token_type} ${session.token.access_token}`,
       Cookie: cookieHeader(session.cookies),
+      Referer: OIDC_REDIRECT_URI,
       'x-api-key': VODAFONE_API_KEY,
     },
     json: true,
@@ -341,7 +293,6 @@ async function exchangeCodeForTokenForCredentialTest(
   credentialTestFunctions: ICredentialTestFunctions,
   code: string,
   verifier: string,
-  cookies: Map<string, string>,
 ): Promise<OidcTokenResponse> {
   const url = new URL(OIDC_TOKEN_URL);
   url.searchParams.set('client_id', OIDC_CLIENT_ID);
@@ -353,10 +304,7 @@ async function exchangeCodeForTokenForCredentialTest(
   const response = await credentialTestRequest(credentialTestFunctions, {
     uri: url.toString(),
     method: 'POST',
-    headers: {
-      ...browserHeaders(),
-      Cookie: cookieHeader(cookies),
-    },
+    headers: defaultHeaders(),
     json: true,
   });
 
@@ -377,9 +325,8 @@ async function exchangeCodeForToken(
   executeFunctions: IExecuteFunctions,
   code: string,
   verifier: string,
-  cookies: Map<string, string>,
   itemIndex: number,
-): Promise<VodafoneTokenExchange> {
+): Promise<OidcTokenResponse> {
   const url = new URL(OIDC_TOKEN_URL);
   url.searchParams.set('client_id', OIDC_CLIENT_ID);
   url.searchParams.set('grant_type', 'authorization_code');
@@ -390,10 +337,7 @@ async function exchangeCodeForToken(
   const response = (await executeFunctions.helpers.httpRequest({
     url: url.toString(),
     method: 'POST',
-    headers: {
-      ...browserHeaders(),
-      Cookie: cookieHeader(cookies),
-    },
+    headers: defaultHeaders(),
     json: true,
     returnFullResponse: true,
     ignoreHttpStatusErrors: true,
@@ -420,10 +364,7 @@ async function exchangeCodeForToken(
     );
   }
 
-  return {
-    cookies: mergeCookies(cookies, response),
-    token: token as OidcTokenResponse,
-  };
+  return token as OidcTokenResponse;
 }
 
 export async function testVodafoneCredentials(
@@ -485,7 +426,7 @@ export async function testVodafoneCredentials(
       );
     }
 
-    await exchangeCodeForTokenForCredentialTest(this, code, verifier, cookies);
+    await exchangeCodeForTokenForCredentialTest(this, code, verifier);
 
     return {
       status: 'OK',
@@ -589,17 +530,14 @@ export async function login(
     );
   }
 
-  const tokenExchange = await exchangeCodeForToken(
-    executeFunctions,
-    code,
-    verifier,
-    cookies,
-    itemIndex,
-  );
-
   return {
-    cookies: tokenExchange.cookies,
-    token: tokenExchange.token,
+    cookies,
+    token: await exchangeCodeForToken(
+      executeFunctions,
+      code,
+      verifier,
+      itemIndex,
+    ),
   };
 }
 
