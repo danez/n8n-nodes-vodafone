@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+      - renovate/**
+
+permissions: {}
 
 jobs:
   build:
