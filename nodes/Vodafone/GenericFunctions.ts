@@ -49,6 +49,14 @@ function defaultHeaders(): IDataObject {
   };
 }
 
+function apiHeaders(session: VodafoneSession): IDataObject {
+  return {
+    'Content-Type': 'application/json',
+    Authorization: `${session.token.token_type} ${session.token.access_token}`,
+    'x-api-key': VODAFONE_API_KEY,
+  };
+}
+
 function generateCodeVerifier(): string {
   const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   let verifier = '';
@@ -157,6 +165,37 @@ function locationHeader(response: IN8nHttpFullResponse): string {
   return '';
 }
 
+function responseDetails(response: IN8nHttpFullResponse): string {
+  const details: string[] = [];
+  const contentType = headerValue(response.headers, 'content-type');
+
+  if (typeof contentType === 'string') {
+    details.push(`content-type: ${contentType}`);
+  }
+
+  if (typeof response.body === 'string' && response.body.trim()) {
+    details.push(`body: ${redactResponseBody(response.body.trim())}`);
+  } else if (
+    response.body &&
+    typeof response.body === 'object' &&
+    !Buffer.isBuffer(response.body)
+  ) {
+    details.push(`body: ${redactResponseBody(JSON.stringify(response.body))}`);
+  }
+
+  return details.length ? `; ${details.join('; ')}` : '';
+}
+
+function redactResponseBody(body: string): string {
+  return body
+    .replace(/Bearer\s+[A-Za-z0-9._~+/-]+=*/gi, 'Bearer [redacted]')
+    .replace(
+      /access_token["']?\s*[:=]\s*["']?[^"',\s}]+/gi,
+      'access_token=[redacted]',
+    )
+    .slice(0, 500);
+}
+
 function createApiError(
   executeFunctions: IExecuteFunctions,
   message: string,
@@ -166,7 +205,10 @@ function createApiError(
   const statusText = response?.statusCode
     ? `${message} (HTTP ${response.statusCode}${response.statusMessage ? ` ${response.statusMessage}` : ''})`
     : message;
-  const errorResponse: JsonObject = { message: statusText };
+  const errorMessage = response
+    ? `${statusText}${responseDetails(response)}`
+    : statusText;
+  const errorResponse: JsonObject = { message: errorMessage };
 
   if (response?.statusCode !== undefined) {
     errorResponse.statusCode = response.statusCode;
@@ -191,7 +233,7 @@ function createApiError(
   return new NodeApiError(executeFunctions.getNode(), errorResponse, {
     itemIndex,
     httpCode: response?.statusCode ? String(response.statusCode) : undefined,
-    message: statusText,
+    message: errorMessage,
   });
 }
 
@@ -216,14 +258,7 @@ async function requestJson<T>(
   const response = (await executeFunctions.helpers.httpRequest({
     url,
     method: 'GET',
-    headers: {
-      ...defaultHeaders(),
-      'Content-Type': 'application/json',
-      Authorization: `${session.token.token_type} ${session.token.access_token}`,
-      Cookie: cookieHeader(session.cookies),
-      Referer: OIDC_REDIRECT_URI,
-      'x-api-key': VODAFONE_API_KEY,
-    },
+    headers: apiHeaders(session),
     json: true,
     returnFullResponse: true,
     ignoreHttpStatusErrors: true,
