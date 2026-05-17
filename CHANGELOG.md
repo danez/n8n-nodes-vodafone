@@ -1,5 +1,12 @@
 # n8n-nodes-vodafone
 
+## 1.0.3
+
+### Patch Changes
+
+- [`2110aa9`](https://github.com/danez/n8n-nodes-vodafone/commit/2110aa949f0ec16185d27175dd568332f61a21a4)
+  Thanks [@danez](https://github.com/danez)! - Try another fix for auth
+
 ## 1.0.2
 
 ### Patch Changes
