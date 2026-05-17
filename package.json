@@ -19,7 +19,7 @@
     "url": "https://github.com/danez/n8n-nodes-vodafone.git"
   },
   "scripts": {
-    "build": "n8n-node build",
+    "build": "rimraf dist/ && n8n-node build",
     "build:watch": "tsc --watch",
     "dev": "n8n-node dev",
     "lint": "n8n-node lint",
