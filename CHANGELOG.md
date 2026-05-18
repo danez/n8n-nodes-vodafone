@@ -1,5 +1,21 @@
 # n8n-nodes-vodafone
 
+## 1.2.0
+
+### Minor Changes
+
+- [`e17282a`](https://github.com/danez/n8n-nodes-vodafone/commit/e17282ac924562c07da1e2094e0ca26003761f5c)
+  Thanks [@danez](https://github.com/danez)! - Support changing Vodafone API key
+  in credentials.
+
+  This was requested in review and should be left on default value in most
+  cases.
+
+### Patch Changes
+
+- [`65516a8`](https://github.com/danez/n8n-nodes-vodafone/commit/65516a85d588002e8606ebda61769d36ae10bfc2)
+  Thanks [@danez](https://github.com/danez)! - Add homepage link to npm package
+
 ## 1.1.2
 
 ### Patch Changes

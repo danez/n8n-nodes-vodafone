@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-vodafone",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "n8n community node for downloading Vodafone Germany invoices",
   "license": "MIT",
   "homepage": "https://github.com/danez/n8n-nodes-vodafone#readme",
