@@ -26,11 +26,18 @@ Add the Vodafone node to a workflow and choose:
 - Resource: `Invoice`
 - Operation: `Download`
 - Number of Invoices: How many latest invoices to fetch per contract. The default is `1`.
+- Filter by Month/Year: Optionally restrict downloads to invoices from a specific invoice month and year.
 - Binary Property: The output binary property name. The default is `data`.
 
 The node discovers all cable contracts in the account, fetches the newest invoices for each contract, downloads each invoice document, and returns one item per PDF.
 
 Each output item includes invoice and contract metadata in `json` and the PDF in the configured binary property.
+
+Month/year filters are expression-friendly. For example, if an earlier node
+extracts `12.05.2026` from a Vodafone email subject into `invoiceDate`, set:
+
+- Invoice Month: `={{ Number($json.invoiceDate.split('.')[1]) }}`
+- Invoice Year: `={{ Number($json.invoiceDate.split('.')[2]) }}`
 
 ## Compatibility
 

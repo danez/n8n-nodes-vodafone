@@ -98,7 +98,58 @@ export class Vodafone implements INodeType {
             operation: ['download'],
           },
         },
-        description: 'Max number of latest invoices to download per contract',
+        description:
+          'Max number of matching latest invoice PDFs to download per contract',
+      },
+      {
+        displayName: 'Filter by Month/Year',
+        name: 'filterByMonthYear',
+        type: 'boolean',
+        default: false,
+        displayOptions: {
+          show: {
+            resource: ['invoice'],
+            operation: ['download'],
+          },
+        },
+        description:
+          'Whether to only download invoices whose invoice date matches a month and year',
+      },
+      {
+        displayName: 'Invoice Month',
+        name: 'invoiceMonth',
+        type: 'number',
+        default: 1,
+        typeOptions: {
+          minValue: 1,
+          maxValue: 12,
+        },
+        displayOptions: {
+          show: {
+            resource: ['invoice'],
+            operation: ['download'],
+            filterByMonthYear: [true],
+          },
+        },
+        description:
+          'Invoice month to download, from 1 for January to 12 for December',
+      },
+      {
+        displayName: 'Invoice Year',
+        name: 'invoiceYear',
+        type: 'number',
+        default: new Date().getFullYear(),
+        typeOptions: {
+          minValue: 2000,
+        },
+        displayOptions: {
+          show: {
+            resource: ['invoice'],
+            operation: ['download'],
+            filterByMonthYear: [true],
+          },
+        },
+        description: 'Invoice year to download, for example 2026',
       },
     ],
   };
@@ -138,6 +189,21 @@ export class Vodafone implements INodeType {
           'invoiceCount',
           itemIndex,
         ) as number;
+        const filterByMonthYear = this.getNodeParameter(
+          'filterByMonthYear',
+          itemIndex,
+        ) as boolean;
+        const invoiceMonth = filterByMonthYear
+          ? (this.getNodeParameter('invoiceMonth', itemIndex) as number)
+          : undefined;
+        const invoiceYear = filterByMonthYear
+          ? (this.getNodeParameter('invoiceYear', itemIndex) as number)
+          : undefined;
+
+        if (filterByMonthYear) {
+          validateMonthYear(this, invoiceMonth, invoiceYear, itemIndex);
+        }
+
         const credentials = (await this.getCredentials(
           'vodafoneApi',
           itemIndex,
@@ -178,8 +244,17 @@ export class Vodafone implements INodeType {
           const sortedInvoices = [...(invoiceList.invoices ?? [])].sort(
             (a, b) => invoiceTimestamp(b.date) - invoiceTimestamp(a.date),
           );
+          const matchingInvoices = filterByMonthYear
+            ? sortedInvoices.filter((invoice) =>
+                invoiceMatchesMonthYear(
+                  invoice.date,
+                  invoiceMonth,
+                  invoiceYear,
+                ),
+              )
+            : sortedInvoices;
           const selectedDocuments = invoiceDocumentsToDownload(
-            sortedInvoices,
+            matchingInvoices,
             invoiceCount,
           );
 
@@ -191,6 +266,18 @@ export class Vodafone implements INodeType {
             invoicesWithDocuments: sortedInvoices.filter(
               (invoice) => (invoice.documents?.length ?? 0) > 0,
             ).length,
+            matchingInvoices: matchingInvoices.length,
+            matchingInvoicesWithDocuments: matchingInvoices.filter(
+              (invoice) => (invoice.documents?.length ?? 0) > 0,
+            ).length,
+            matchingDocuments: invoiceDocumentCount(matchingInvoices),
+            filterByMonthYear,
+            ...(filterByMonthYear
+              ? {
+                  invoiceMonth,
+                  invoiceYear,
+                }
+              : {}),
             selectedInvoices: new Set(
               selectedDocuments.map(({ invoice }) => invoice),
             ).size,
@@ -308,6 +395,73 @@ function invoiceTimestamp(date: string | undefined): number {
   const timestamp = Date.parse(date);
 
   return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+function validateMonthYear(
+  executeFunctions: IExecuteFunctions,
+  month: number | undefined,
+  year: number | undefined,
+  itemIndex: number,
+): void {
+  if (
+    typeof month !== 'number' ||
+    !Number.isInteger(month) ||
+    month < 1 ||
+    month > 12
+  ) {
+    throw new NodeOperationError(
+      executeFunctions.getNode(),
+      'Invoice Month must be an integer between 1 and 12',
+      { itemIndex },
+    );
+  }
+
+  if (typeof year !== 'number' || !Number.isInteger(year) || year < 2000) {
+    throw new NodeOperationError(
+      executeFunctions.getNode(),
+      'Invoice Year must be an integer greater than or equal to 2000',
+      { itemIndex },
+    );
+  }
+}
+
+function invoiceMatchesMonthYear(
+  date: string | undefined,
+  month: number | undefined,
+  year: number | undefined,
+): boolean {
+  if (!date || month === undefined || year === undefined) {
+    return false;
+  }
+
+  const isoDate = date.match(/^(\d{4})-(\d{2})-\d{2}/);
+
+  if (isoDate) {
+    return Number(isoDate[1]) === year && Number(isoDate[2]) === month;
+  }
+
+  const timestamp = Date.parse(date);
+
+  if (Number.isNaN(timestamp)) {
+    return false;
+  }
+
+  const parsedDate = new Date(timestamp);
+
+  return (
+    parsedDate.getUTCFullYear() === year &&
+    parsedDate.getUTCMonth() + 1 === month
+  );
+}
+
+function invoiceDocumentCount(invoices: VodafoneInvoice[]): number {
+  return invoices.reduce(
+    (documentCount, invoice) =>
+      documentCount +
+      (invoice.documents ?? []).filter((document) => document.documentId)
+        .length,
+    0,
+  );
 }
 
 function invoiceDocumentsToDownload(
