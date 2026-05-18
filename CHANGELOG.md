@@ -1,5 +1,12 @@
 # n8n-nodes-vodafone
 
+## 1.1.0
+
+### Minor Changes
+
+- [`509f403`](https://github.com/danez/n8n-nodes-vodafone/commit/509f403011c3f57cdb182d09bc1bd18977efb0e5)
+  Thanks [@danez](https://github.com/danez)! - Add new filter by date
+
 ## 1.0.3
 
 ### Patch Changes
