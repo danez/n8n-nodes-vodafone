@@ -12,7 +12,9 @@
   },
   "packageManager": "pnpm@11.1.2",
   "author": {
-    "name": "Daniel Tschinder (http://github.com/danez)"
+    "name": "Daniel Tschinder",
+    "email": "n8n.vodafone@tschinder.de",
+    "url": "http://github.com/danez"
   },
   "repository": {
     "type": "git",
