@@ -2,6 +2,8 @@
 
 This is an n8n community node for downloading Vodafone Germany cable invoices as binary PDF files.
 
+> This project is not affiliated with, endorsed by, sponsored by, or connected to Vodafone in any way.
+
 [n8n](https://n8n.io/) is a workflow automation platform.
 
 ## Installation
