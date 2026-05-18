@@ -1,5 +1,12 @@
 # n8n-nodes-vodafone
 
+## 1.1.1
+
+### Patch Changes
+
+- [`669cee5`](https://github.com/danez/n8n-nodes-vodafone/commit/669cee57712f7f6207bb1def12ea36edbe204ff6)
+  Thanks [@danez](https://github.com/danez)! - Rerelease with metadata changes
+
 ## 1.1.0
 
 ### Minor Changes
