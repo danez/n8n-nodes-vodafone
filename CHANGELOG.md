@@ -1,5 +1,12 @@
 # n8n-nodes-vodafone
 
+## 1.1.2
+
+### Patch Changes
+
+- [`60ef1fd`](https://github.com/danez/n8n-nodes-vodafone/commit/60ef1fd4e55a48d8487430b79ca5b162bad38b6d)
+  Thanks [@danez](https://github.com/danez)! - Add a test for the credentials
+
 ## 1.1.1
 
 ### Patch Changes
