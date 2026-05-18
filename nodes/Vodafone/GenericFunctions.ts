@@ -37,7 +37,6 @@ const OIDC_REDIRECT_URI = 'https://www.vodafone.de/meinvodafone/services/';
 const OIDC_SCOPES =
   'openid profile webseal user-groups user-accounts validate-token update-email-username account user-data user-subscriptions';
 const OIDC_CODE_CHALLENGE_LENGTH = 43;
-const VODAFONE_API_KEY = 'aEIoMCae0A933wBL0bLlS6SwSBfkKwM5';
 const USER_INFO_URL =
   'https://api.vodafone.de/meinvodafone/v2/tmf-api/openid/v4/userinfo';
 
@@ -53,7 +52,7 @@ function apiHeaders(session: VodafoneSession): IDataObject {
   return {
     'Content-Type': 'application/json',
     Authorization: `${session.token.token_type} ${session.token.access_token}`,
-    'x-api-key': VODAFONE_API_KEY,
+    'x-api-key': session.apiKey,
   };
 }
 
@@ -567,6 +566,7 @@ export async function login(
 
   return {
     cookies,
+    apiKey: credentials.apiKey,
     token: await exchangeCodeForToken(
       executeFunctions,
       code,

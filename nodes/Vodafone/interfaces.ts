@@ -1,6 +1,7 @@
 export interface VodafoneCredentials {
   username: string;
   password: string;
+  apiKey: string;
 }
 
 export interface OidcTokenResponse {
@@ -13,6 +14,7 @@ export interface OidcTokenResponse {
 
 export interface VodafoneSession {
   cookies: Map<string, string>;
+  apiKey: string;
   token: OidcTokenResponse;
 }
 

@@ -59,5 +59,15 @@ export class VodafoneApi implements ICredentialType {
       default: '',
       required: true,
     },
+    {
+      displayName: 'API Key',
+      name: 'apiKey',
+      type: 'string',
+      typeOptions: { password: true },
+      default: 'aEIoMCae0A933wBL0bLlS6SwSBfkKwM5',
+      required: true,
+      description:
+        'Vodafone app API key used for MeinVodafone API requests. Leave the default unless Vodafone changes it.',
+    },
   ];
 }
