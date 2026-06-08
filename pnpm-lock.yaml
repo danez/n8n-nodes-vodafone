@@ -19,8 +19,8 @@ importers:
         specifier: 2.31.0
         version: 2.31.0(@types/node@18.19.130)
       '@n8n/node-cli':
-        specifier: 0.33.0
-        version: 0.33.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(@typescript-eslint/utils@8.60.1(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(typescript@6.0.3)(ws@8.21.0)
+        specifier: 0.33.1
+        version: 0.33.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(@typescript-eslint/utils@8.60.1(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(typescript@6.0.3)(ws@8.21.0)
       eslint:
         specifier: 9.39.4
         version: 9.39.4
@@ -660,11 +660,11 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@n8n/ai-node-sdk@0.14.0':
-    resolution: {integrity: sha512-QGaagbU3KzZIDngcjTxV6Ei1nQeVx7oMqTH1LhLlPJvxX0sWFRpavMRNGbSofmZoiFnXMHvLtgyc8n6I6P137w==}
+  '@n8n/ai-node-sdk@0.14.1':
+    resolution: {integrity: sha512-Wd44lVVXdNTLs/cvsU56CILqC5LMVXYi4X0kGKlFbLm+YKBQZ/ry7EFNz5ul0VHTZEQSxqBnBVvqvhwkIc6tjw==}
 
-  '@n8n/ai-utilities@0.17.0':
-    resolution: {integrity: sha512-MnCBMvXxHX9GtdjheqaO9DPGIbC5xTdyLSMMWfYLXK2xldUHZqcmeRHeAYnlg2rn9VkKFOqsn7T+h1ljF12KvA==}
+  '@n8n/ai-utilities@0.17.1':
+    resolution: {integrity: sha512-PaRZN9XEnexnz45/PbJ/Jn3qox5gyw5hry8dFjzWDDIVewnEYcJkspy+QtZIzrHUwH0Z0LJArA6Mebx/Bd8inA==}
     peerDependencies:
       n8n-workflow: '*'
 
@@ -689,8 +689,8 @@ packages:
   '@n8n/expression-runtime@0.8.0':
     resolution: {integrity: sha512-SnBLoLsrGUCS9cVrF20UuSyKcMv+y6Clc4+EA9zLjX85S0GPwOAdApUVSsi81ejPAqMlm42TW1L6r7NpcK/ztQ==}
 
-  '@n8n/node-cli@0.33.0':
-    resolution: {integrity: sha512-sCPM45oeNvv1yfvDzX0d313WAmbB8ozgXAHU8ImgRfcksC7o4torfgeW5o16wrpsI1KgQ+XX4Ct0+S7bqH7p6g==}
+  '@n8n/node-cli@0.33.1':
+    resolution: {integrity: sha512-eKCdT5r73s3gjpwrp5vJG1vqohxhBAVAmu0usYJ4O2l4ZUTCIDkLOOH+Up9OrRnxOQBm4yh2zcU4/D0ibnvBXw==}
     hasBin: true
     peerDependencies:
       eslint: 9.29.0
@@ -809,6 +809,10 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@thednp/dommatrix@2.0.12':
+    resolution: {integrity: sha512-eOshhlSShBXLfrMQqqhA450TppJXhKriaQdN43mmniOCMn9sD60QKF1Axsj7bKl339WH058LuGFS6H84njYH5w==}
+    engines: {node: '>=20', pnpm: '>=8.6.0'}
 
   '@tokenizer/inflate@0.4.1':
     resolution: {integrity: sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==}
@@ -2829,13 +2833,13 @@ snapshots:
 
   '@clack/core@0.5.0':
     dependencies:
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       sisteransi: 1.0.5
 
   '@clack/prompts@0.11.0':
     dependencies:
       '@clack/core': 0.5.0
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       sisteransi: 1.0.5
 
   '@emnapi/core@1.10.0':
@@ -3075,9 +3079,9 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@n8n/ai-node-sdk@0.14.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)':
+  '@n8n/ai-node-sdk@0.14.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)':
     dependencies:
-      '@n8n/ai-utilities': 0.17.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)
+      '@n8n/ai-utilities': 0.17.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)
     transitivePeerDependencies:
       - '@arcjet/redact'
       - '@aws-crypto/sha256-js'
@@ -3211,7 +3215,7 @@ snapshots:
       - ws
       - youtubei.js
 
-  '@n8n/ai-utilities@0.17.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)':
+  '@n8n/ai-utilities@0.17.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)':
     dependencies:
       '@langchain/classic': 1.0.27(@langchain/core@1.1.41(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0)
       '@langchain/community': 1.1.27(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(@langchain/core@1.1.41(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(pdf-parse@2.4.5)(playwright@1.60.0)(ws@8.21.0)
@@ -3221,6 +3225,7 @@ snapshots:
       '@n8n/config': 2.22.0
       '@n8n/typescript-config': 1.4.0
       '@n8n/utils': 1.32.0
+      '@thednp/dommatrix': 2.0.12
       https-proxy-agent: 7.0.6
       js-tiktoken: 1.0.21
       langchain: 1.2.30(@langchain/core@1.1.41(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0)(zod-to-json-schema@3.23.3(zod@3.25.67))
@@ -3401,10 +3406,10 @@ snapshots:
       title-case: 3.0.3
       transliteration: 2.3.5
 
-  '@n8n/node-cli@0.33.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(@typescript-eslint/utils@8.60.1(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(typescript@6.0.3)(ws@8.21.0)':
+  '@n8n/node-cli@0.33.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(@typescript-eslint/utils@8.60.1(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(typescript@6.0.3)(ws@8.21.0)':
     dependencies:
       '@clack/prompts': 0.11.0
-      '@n8n/ai-node-sdk': 0.14.0(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)
+      '@n8n/ai-node-sdk': 0.14.1(@browserbasehq/sdk@2.13.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.60.0)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.13)(ibm-cloud-sdk-core@5.4.20)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(n8n-workflow@2.16.0)(openai@6.42.0(ws@8.21.0)(zod@3.25.67))(playwright@1.60.0)(ws@8.21.0)
       '@n8n/eslint-plugin-community-nodes': 0.18.0(eslint@9.39.4)(n8n-workflow@2.16.0)(typescript@6.0.3)
       '@oclif/core': 4.11.4
       change-case: 5.4.4
@@ -3665,6 +3670,8 @@ snapshots:
       playwright: 1.60.0
 
   '@standard-schema/spec@1.1.0': {}
+
+  '@thednp/dommatrix@2.0.12': {}
 
   '@tokenizer/inflate@0.4.1':
     dependencies:
@@ -3929,7 +3936,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4
+      debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4547,7 +4554,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
