@@ -19,11 +19,11 @@ importers:
         specifier: 2.31.0
         version: 2.31.0(@types/node@18.19.130)
       '@n8n/node-cli':
-        specifier: 0.37.1
-        version: 0.37.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(n8n-workflow@2.16.0)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(typescript@6.0.3)(ws@8.21.0)
+        specifier: 0.37.2
+        version: 0.37.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(n8n-workflow@2.16.0)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(typescript@6.0.3)(ws@8.21.0)
       eslint:
         specifier: 9.39.4
-        version: 9.39.4(supports-color@8.1.1)
+        version: 9.39.4
       prettier:
         specifier: 3.9.4
         version: 3.9.4
@@ -656,11 +656,11 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@n8n/ai-node-sdk@0.18.1':
-    resolution: {integrity: sha512-tScLImxXw7wXCzg+9DKLHbcwv640VxA6/Qd2oBHjftgSs8Pwt8frRibXpA0/IbkPxJj4pZfr2MAyhBqpkv5ncw==}
+  '@n8n/ai-node-sdk@0.18.2':
+    resolution: {integrity: sha512-44HUwBotjEbmLFiTtwLzx+pWsLqnvlcXh9CZERZb8NW7KAdWR4W7vC3w0Doj52VZka89uV46t9YdTq/tmdn6+w==}
 
-  '@n8n/ai-utilities@0.21.1':
-    resolution: {integrity: sha512-tamnMHzfXcvvh+bcjAHDAPGT1eIQ49FKcx7xro2ievneusQbGitGvadEv4KlbNttS4m8wkHXeH9WxNsAHTSiFw==}
+  '@n8n/ai-utilities@0.21.2':
+    resolution: {integrity: sha512-Kx+EfA1DvCsGyvDR2ucwvtTOSRHXlE7yaHBtEDyiTKx5kMuEJv9JuF4Y8tLKmh3f4g/norNWqmyTJEVAHZMNag==}
 
   '@n8n/config@2.26.0':
     resolution: {integrity: sha512-DvCL2Ag9wx5l6x4F1CirfEEd2c6DUZAwTwnBwgjiyVfKI0/pxVtsdqL5BNYGHWW9DKHXPjQeqFH48FEoC5uPYg==}
@@ -689,8 +689,8 @@ packages:
   '@n8n/expression-runtime@0.8.0':
     resolution: {integrity: sha512-SnBLoLsrGUCS9cVrF20UuSyKcMv+y6Clc4+EA9zLjX85S0GPwOAdApUVSsi81ejPAqMlm42TW1L6r7NpcK/ztQ==}
 
-  '@n8n/node-cli@0.37.1':
-    resolution: {integrity: sha512-fMvArJzD/JrZJxqYnAPG6n8EMc/+8sJamM7VgHvMh8z7Erypz/cxQhgsvD+0QxnP5haKmDDyuuRy5GR9BqyMSA==}
+  '@n8n/node-cli@0.37.2':
+    resolution: {integrity: sha512-y4H6N4c7oM1ZuLzOdfylSKpxIRM6E2NaalOlbDIgnyWb8Z3Y9csT5Sq1grAOAuryinNhCX4RxFt/xfGMWhcC4w==}
     hasBin: true
     peerDependencies:
       eslint: 9.29.0
@@ -1995,8 +1995,8 @@ packages:
   n8n-workflow@2.16.0:
     resolution: {integrity: sha512-JoDvHLvV4QZQBCDVQl5xkrGOmPmsacLO4TkJkErCzMmiEqIej+h14J6eCUY7gbxBj8V+GIBlpqyO63akJbXRQg==}
 
-  n8n-workflow@2.28.1:
-    resolution: {integrity: sha512-LjV0bgggMSY3FnNQcXrIKhElMvNIFPT5xc/uXXzO9uVlznuAT9f5SYjWsZrv/fMaH6pBHrksMvrDsXa96og6IQ==}
+  n8n-workflow@2.28.2:
+    resolution: {integrity: sha512-fGJ6yxRdgeea5EAywfAplYWDLMRNVMZRFikVTFLCBOInxLRDB89LL66sZHx2SC9dl/FALJAGZ6twY5MyUlc+HA==}
 
   nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
@@ -2808,13 +2808,13 @@ snapshots:
 
   '@clack/core@0.5.0':
     dependencies:
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       sisteransi: 1.0.5
 
   '@clack/prompts@0.11.0':
     dependencies:
       '@clack/core': 0.5.0
-      picocolors: 1.0.1
+      picocolors: 1.1.1
       sisteransi: 1.0.5
 
   '@emnapi/core@1.10.0':
@@ -2833,14 +2833,14 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@eslint-community/eslint-utils@4.9.1(eslint@9.39.4(supports-color@8.1.1))':
+  '@eslint-community/eslint-utils@4.9.1(eslint@9.39.4)':
     dependencies:
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.21.2(supports-color@8.1.1)':
+  '@eslint/config-array@0.21.2':
     dependencies:
       '@eslint/object-schema': 2.1.7
       debug: 4.4.3(supports-color@8.1.1)
@@ -2856,7 +2856,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.5(supports-color@8.1.1)':
+  '@eslint/eslintrc@3.3.5':
     dependencies:
       ajv: 6.15.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -3059,9 +3059,9 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@n8n/ai-node-sdk@0.18.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(ws@8.21.0)':
+  '@n8n/ai-node-sdk@0.18.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(ws@8.21.0)':
     dependencies:
-      '@n8n/ai-utilities': 0.21.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(ws@8.21.0)
+      '@n8n/ai-utilities': 0.21.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(ws@8.21.0)
     transitivePeerDependencies:
       - '@arcjet/redact'
       - '@aws-crypto/sha256-js'
@@ -3194,7 +3194,7 @@ snapshots:
       - ws
       - youtubei.js
 
-  '@n8n/ai-utilities@0.21.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(ws@8.21.0)':
+  '@n8n/ai-utilities@0.21.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(ws@8.21.0)':
     dependencies:
       '@langchain/classic': 1.0.27(@langchain/core@1.1.41(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0)
       '@langchain/community': 1.1.27(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(@langchain/core@1.1.41(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.18.1)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(pdf-parse@2.4.5)(playwright@1.61.1)(ws@8.21.0)
@@ -3205,11 +3205,11 @@ snapshots:
       '@n8n/typescript-config': 1.6.1
       '@n8n/utils': 1.36.0
       '@thednp/dommatrix': 2.0.12
-      https-proxy-agent: 7.0.6(supports-color@8.1.1)
+      https-proxy-agent: 7.0.6
       js-tiktoken: 1.0.21
       langchain: 1.2.30(@langchain/core@1.1.41(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0))(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(ws@8.21.0)
       lodash: 4.18.1
-      n8n-workflow: 2.28.1
+      n8n-workflow: 2.28.2
       pdf-parse: 2.4.5
       proxy-from-env: 1.1.0
       tmp-promise: 3.0.3
@@ -3369,11 +3369,11 @@ snapshots:
     dependencies:
       callsites: 3.1.0
 
-  '@n8n/eslint-plugin-community-nodes@0.22.0(eslint@9.39.4(supports-color@8.1.1))(n8n-workflow@2.16.0)(typescript@6.0.3)':
+  '@n8n/eslint-plugin-community-nodes@0.22.0(eslint@9.39.4)(n8n-workflow@2.16.0)(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/typescript-estree': 8.62.0(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
-      eslint: 9.39.4(supports-color@8.1.1)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
+      eslint: 9.39.4
       fastest-levenshtein: 1.0.16
       n8n-workflow: 2.16.0
     transitivePeerDependencies:
@@ -3407,18 +3407,18 @@ snapshots:
       title-case: 3.0.3
       transliteration: 2.3.5
 
-  '@n8n/node-cli@0.37.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(n8n-workflow@2.16.0)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(typescript@6.0.3)(ws@8.21.0)':
+  '@n8n/node-cli@0.37.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(n8n-workflow@2.16.0)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(typescript@6.0.3)(ws@8.21.0)':
     dependencies:
       '@clack/prompts': 0.11.0
       '@eslint/js': 9.39.4
-      '@n8n/ai-node-sdk': 0.18.1(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(supports-color@8.1.1)(ws@8.21.0)
-      '@n8n/eslint-plugin-community-nodes': 0.22.0(eslint@9.39.4(supports-color@8.1.1))(n8n-workflow@2.16.0)(typescript@6.0.3)
+      '@n8n/ai-node-sdk': 0.18.2(@browserbasehq/sdk@2.14.1)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.61.1)(deepmerge@4.3.1)(dotenv@16.4.5)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(zod@3.25.67))(@ibm-cloud/watsonx-ai@1.7.14)(ibm-cloud-sdk-core@5.5.0)(ignore@7.0.5)(jsonwebtoken@9.0.3)(openai@6.45.0(ws@8.21.0)(zod@3.25.67))(playwright@1.61.1)(ws@8.21.0)
+      '@n8n/eslint-plugin-community-nodes': 0.22.0(eslint@9.39.4)(n8n-workflow@2.16.0)(typescript@6.0.3)
       '@oclif/core': 4.11.11
       change-case: 5.4.4
-      eslint: 9.39.4(supports-color@8.1.1)
-      eslint-import-resolver-typescript: 4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)
-      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)
-      eslint-plugin-n8n-nodes-base: 1.16.7(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
+      eslint: 9.39.4
+      eslint-import-resolver-typescript: 4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4))(eslint@9.39.4)
+      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)
+      eslint-plugin-n8n-nodes-base: 1.16.7(eslint@9.39.4)(typescript@6.0.3)
       fast-glob: 3.2.12
       handlebars: 4.7.9
       picocolors: 1.0.1
@@ -3426,7 +3426,7 @@ snapshots:
       prompts: 2.4.2
       rimraf: 6.0.1
       ts-morph: 27.0.2
-      typescript-eslint: 8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
+      typescript-eslint: 8.62.0(eslint@9.39.4)(typescript@6.0.3)
     transitivePeerDependencies:
       - '@arcjet/redact'
       - '@aws-crypto/sha256-js'
@@ -3726,15 +3726,15 @@ snapshots:
 
   '@types/tough-cookie@4.0.0': {}
 
-  '@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)':
+  '@typescript-eslint/eslint-plugin@8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
-      '@typescript-eslint/parser': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
+      '@typescript-eslint/parser': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
       '@typescript-eslint/scope-manager': 8.62.0
-      '@typescript-eslint/type-utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
+      '@typescript-eslint/type-utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
       '@typescript-eslint/visitor-keys': 8.62.0
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       ignore: 7.0.5
       natural-compare: 1.4.0
       ts-api-utils: 2.5.0(typescript@6.0.3)
@@ -3742,14 +3742,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)':
+  '@typescript-eslint/parser@8.62.0(eslint@9.39.4)(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.62.0
       '@typescript-eslint/types': 8.62.0
       '@typescript-eslint/typescript-estree': 8.62.0(typescript@6.0.3)
       '@typescript-eslint/visitor-keys': 8.62.0
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
@@ -3772,13 +3772,13 @@ snapshots:
     dependencies:
       typescript: 6.0.3
 
-  '@typescript-eslint/type-utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)':
+  '@typescript-eslint/type-utils@8.62.0(eslint@9.39.4)(typescript@6.0.3)':
     dependencies:
       '@typescript-eslint/types': 8.62.0
       '@typescript-eslint/typescript-estree': 8.62.0(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -3801,13 +3801,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)':
+  '@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3)':
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(supports-color@8.1.1))
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4)
       '@typescript-eslint/scope-manager': 8.62.0
       '@typescript-eslint/types': 8.62.0
       '@typescript-eslint/typescript-estree': 8.62.0(typescript@6.0.3)
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
@@ -4169,10 +4169,10 @@ snapshots:
     optionalDependencies:
       unrs-resolver: 1.12.2
 
-  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1):
+  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4))(eslint@9.39.4):
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       eslint-import-context: 0.1.9(unrs-resolver@1.12.2)
       get-tsconfig: 4.14.0
       is-bun-module: 2.0.0
@@ -4180,16 +4180,16 @@ snapshots:
       tinyglobby: 0.2.17
       unrs-resolver: 1.12.2
     optionalDependencies:
-      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)
+      eslint-plugin-import-x: 4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1):
+  eslint-plugin-import-x@4.17.0(@typescript-eslint/utils@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4):
     dependencies:
       '@typescript-eslint/types': 8.62.0
       comment-parser: 1.4.7
       debug: 4.4.3(supports-color@8.1.1)
-      eslint: 9.39.4(supports-color@8.1.1)
+      eslint: 9.39.4
       eslint-import-context: 0.1.9(unrs-resolver@1.12.2)
       is-glob: 4.0.3
       minimatch: 10.2.5
@@ -4197,13 +4197,13 @@ snapshots:
       stable-hash-x: 0.2.0
       unrs-resolver: 1.12.2
     optionalDependencies:
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-n8n-nodes-base@1.16.7(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3):
+  eslint-plugin-n8n-nodes-base@1.16.7(eslint@9.39.4)(typescript@6.0.3):
     dependencies:
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
       camel-case: 4.1.2
       indefinite: 2.5.2
       pascal-case: 3.1.2
@@ -4226,14 +4226,14 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@9.39.4(supports-color@8.1.1):
+  eslint@9.39.4:
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(supports-color@8.1.1))
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4)
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.21.2(supports-color@8.1.1)
+      '@eslint/config-array': 0.21.2
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.5(supports-color@8.1.1)
+      '@eslint/eslintrc': 3.3.5
       '@eslint/js': 9.39.4
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.8
@@ -4520,7 +4520,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.6(supports-color@8.1.1):
+  https-proxy-agent@7.0.6:
     dependencies:
       agent-base: 7.1.4
       debug: 4.4.3(supports-color@8.1.1)
@@ -4864,7 +4864,7 @@ snapshots:
       xml2js: 0.6.2
       zod: 3.25.67
 
-  n8n-workflow@2.28.1:
+  n8n-workflow@2.28.2:
     dependencies:
       '@n8n/errors': 0.10.0
       '@n8n/expression-runtime': 0.19.0
@@ -5263,13 +5263,13 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typescript-eslint@8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3):
+  typescript-eslint@8.62.0(eslint@9.39.4)(typescript@6.0.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3))(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
-      '@typescript-eslint/parser': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(supports-color@8.1.1)(typescript@6.0.3)
+      '@typescript-eslint/eslint-plugin': 8.62.0(@typescript-eslint/parser@8.62.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)
+      '@typescript-eslint/parser': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
       '@typescript-eslint/typescript-estree': 8.62.0(typescript@6.0.3)
-      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4(supports-color@8.1.1))(typescript@6.0.3)
-      eslint: 9.39.4(supports-color@8.1.1)
+      '@typescript-eslint/utils': 8.62.0(eslint@9.39.4)(typescript@6.0.3)
+      eslint: 9.39.4
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
