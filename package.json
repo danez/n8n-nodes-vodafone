@@ -45,7 +45,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "1.0.1",
     "@changesets/cli": "3.0.2",
-    "@n8n/node-cli": "0.47.0",
+    "@n8n/node-cli": "0.47.1",
     "eslint": "9.39.5",
     "prettier": "3.9.6",
     "rimraf": "6.1.3",
