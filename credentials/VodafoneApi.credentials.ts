@@ -10,7 +10,10 @@ export class VodafoneApi implements ICredentialType {
 
   displayName = 'Vodafone API';
 
-  icon: Icon = 'file:../icons/vodafone.svg';
+  icon: Icon = {
+    light: 'file:../icons/vodafone.svg',
+    dark: 'file:../icons/vodafone.svg',
+  };
 
   documentationUrl = 'https://github.com/danez/n8n-nodes-vodafone#credentials';
 

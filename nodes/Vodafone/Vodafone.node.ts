@@ -32,7 +32,10 @@ export class Vodafone implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Vodafone',
     name: 'vodafone',
-    icon: 'file:../../icons/vodafone.svg',
+    icon: {
+      light: 'file:../../icons/vodafone.svg',
+      dark: 'file:../../icons/vodafone.svg',
+    },
     group: ['input'],
     version: 1,
     subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

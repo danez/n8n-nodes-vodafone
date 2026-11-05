@@ -240,6 +240,8 @@ async function credentialTestRequest(
   credentialTestFunctions: ICredentialTestFunctions,
   options: Record<string, unknown>,
 ): Promise<IN8nHttpFullResponse> {
+  // ICredentialTestFunctions only exposes the legacy request helper.
+  // eslint-disable-next-line @n8n/community-nodes/no-deprecated-workflow-functions
   return (await credentialTestFunctions.helpers.request({
     ...options,
     resolveWithFullResponse: true,
