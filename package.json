@@ -47,7 +47,7 @@
     "@changesets/cli": "3.0.3",
     "@n8n/node-cli": "0.56.2",
     "eslint": "9.39.5",
-    "prettier": "3.9.10",
+    "prettier": "3.10.0",
     "rimraf": "6.1.4",
     "typescript": "6.0.3"
   },
