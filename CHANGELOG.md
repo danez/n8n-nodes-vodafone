@@ -1,5 +1,14 @@
 # n8n-nodes-vodafone
 
+## 1.2.1
+
+### Patch Changes
+
+- [`ae28ea7`](https://github.com/danez/n8n-nodes-vodafone/commit/ae28ea7ba520ea81a7c5be829ddd7a92979b9db1)
+  Thanks [@danez](https://github.com/danez)! - Verify Vodafone credentials
+  through the full sign-in flow so an HTTP 201 authentication error no longer
+  appears as a successful connection test.
+
 ## 1.2.0
 
 ### Minor Changes
